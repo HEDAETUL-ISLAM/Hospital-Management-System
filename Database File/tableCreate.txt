@@ -1,0 +1,263 @@
+create table admin (person_id varchar2(255) primary key, person_address varchar2(255) not null, person_name varchar2(255) not null, person_phone varchar2(11) unique, admin_password varchar2(255))
+
+create table ambulance(ambulance_no varchar2(255) primary key, driver_name varchar2(255) not null)
+
+create table appointment(appoint_no varchar2(255) primary key, appoint_date date, doctor_id varchar2(255), patient_id varchar2(255) unique, type varchar2(255) default 'N/A')
+
+create table bill (bill_no varchar2(255) primary key, advance_pay number default '0', doctor_charge number default '0', due number default '0', health_card number default '0', lab_charge number default '0', medicine_charge number default '0', no_of_days integer not null, operation_charge number default '0', patient_id varchar2(255), room_charge number default '0', total_bill number not null)
+
+create table department (department_id varchar(255) primary key, consultant varchar2(255), department_head varchar2(255) default null, department_name varchar2(255) unique) 
+
+create table doctor(person_id varchar2(255) primary key, person_address varchar2(255) not null, person_name varchar2(255) not null, person_phone varchar2(11) unique, doctor_department varchar2(255) not null, doctor_gender varchar2(255) not null, doctor_qualification varchar2(255) not null) 
+
+create table employee (person_id varchar2(255) primary key, person_address varchar2(255) not null, person_name varchar2(255) not null, person_phone varchar2(11) unique, employee_gender varchar2(255) not null, employee_salary number not null, employee_type varchar2(255) not null)
+
+create table help_desk (person_id varchar2(255), person_address varchar2(255), person_name varchar2(255), person_phone varchar2(11), employee_gender varchar2(255), employee_type varchar2(255), help_desk_password varchar2(255))
+
+create table hospital (hospital_name varchar2(255) primary key, hospital_address varchar2(255) not null, hospital_code varchar2(255) not null)
+
+create table in_patient (person_id varchar2(255) primary key, person_address varchar2(255) not null, person_name varchar2(255) not null, person_phone varchar2(11) unique, date_of_admit date, date_of_discharge date default null, lab_no varchar2(255), room_no integer not null)) 
+
+create table labreport (lab_no varchar(255) primary key, amount number not null, doctor_id varchar2(255), patient_id varchar2(255), patient_type varchar2(255) default 'N/A', test_date date not null)
+
+create table medicine (medicine_id varchar2(255) primary key, medicine_company varchar2(255) not null, medicine_cost number not null, medicine_name varchar2(255) not null, medicine_type varchar2(255) not null)
+
+create table mortuary (room_no integer, date_of_dead date not null, doctor_name varchar(255) not null, patient_id varchar(255), patient_name varchar(255) not null, problem varchar(255) not null)
+
+create table operation_theater(room_no integer, doctor_name varchar2(255) not null, patient_name varchar2(255) not null)
+
+create table out_patient(patient_id varchar2(255), bill number not null, lab_no varchar2(255))
+
+create table parking (car_no varchar(255) primary key, in_time TIMESTAMP not null, out_time TIMESTAMP default null) 
+
+create table patient (person_id varchar2(255) unique, person_address varchar2(255), person_name varchar2(255), person_phone varchar2(11) unique, patient_age varchar2(255) not null, patient_appoint_no varchar2(255)  unique, patient_disease varchar2(255) default null, patient_doctor varchar2(255), patient_gender varchar2(255) not null, patient_status varchar2(255) not null, patient_weight varchar2(255) not null)
+
+create table patient_record (patient_id varchar2(255), date_of_admit date not null, date_of_discharge date not null, doctor_id varchar(255) not null, doctor_name varchar2(255) not null, patient_name varchar2(255) not null, problem varchar2(255)) 
+
+create table room (room_no integer primary key, room_type varchar2(255) not null, status varchar2(255) not null)
+
+CREATE TABLE EMPLOYEE_SALARY_LOG(PERSON_ID VARCHAR2(255), PERSON_NAME VARCHAR2(266), OLD_SALARY NUMBER, NEW_SALARY NUMBER)
+
+CREATE TABLE ROOMLOG(ROOM_NO VARCHAR2(255), PATIENT_ID VARCHAR2(255),ROOM_TYPE VARCHAR2(255), UPDATING_TIME DATE))
+
+
+ 
+
+alter table Appointment add constraint A1 foreign key(doctor_id) references doctor(person_id);
+
+alter table Bill add constraint B1 foreign key(patient_id) references in_patient(patient_id);
+
+alter table Doctor add constraint D1 foreign key(doctor_department) references department(department_name);
+
+alter table help_desk add constraint HD1 foreign key(person_id) references employee(person_id);
+
+alter table Patient add constraint P1 foreign key(patient_appoint_no) references appointment(appoint_no);
+
+alter table Patient add constraint P2 foreign key(person_id) references appointment(patient_id);
+
+alter table Patient add constraint P3 foreign key(patient_doctor) references doctor(person_id);
+
+alter table in_patient add constraint IP1 foreign key(patient_id) references patient(person_id);
+
+alter table in_patient add constraint IP2 foreign key(lab_no) references labreport(lab_no);
+
+alter table in_patient add constraint IP3 foreign key(room_no) references room(room_no);
+
+alter table labreport add constraint LR1 foreign key(patient_id) references patient(person_id);
+
+alter table labreport add constraint LR2 foreign key(doctor_id) references doctor(person_id);
+
+alter table mortuary add constraint M1 foreign key(room_no) references room(room_no);
+
+alter table mortuary add constraint M2 foreign key(patient_id) references patient(person_id);
+
+alter table operation_theater add constraint OT1 foreign key(room_no) references room(room_no);
+
+alter table out_patient add constraint OP1 foreign key(patient_id) references patient(person_id);
+
+alter table out_patient add constraint OP2 foreign key(lab_no) references labreport(lab_no);
+
+alter table patient_record add constraint PR1 foreign key(patient_id) references patient(person_id);
+
+alter table patient_record add constraint PR2 foreign key(doctor_id) references doctor(person_id);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+package buildgui;
+
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+public class BuildGUI extends Application {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        launch(args);
+        // TODO code application logic here
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        Button button = new Button();
+        button.setText("Submit");
+        Label label = new Label();
+        TextField textfield = new TextField();
+        textfield.setMaxWidth(300);
+        
+        button.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                
+                String str = textfield.getText();
+                label.setText("Hello " +str);
+            }
+        });
+        
+        VBox vbox = new VBox();
+        vbox.setMinHeight(300);
+        vbox.setMinWidth(500);
+        vbox.setAlignment(Pos.CENTER);
+        vbox.setSpacing(20);
+        
+        
+        vbox.getChildren().addAll(textfield,button,label);
+        
+        Scene scene = new Scene(vbox);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+        
+        
+        
+        
+        
+        
+//        BorderPane borderpane = new BorderPane();
+//        borderpane.setMinHeight(300);
+//        borderpane.setMinWidth(500);
+//        
+//        VBox vbox = new VBox();
+//        vbox.setMinHeight(50);
+//        vbox.setMinWidth(500);
+//        vbox.setStyle("-fx-background-color:red");
+//        borderpane.setTop(vbox);
+//        
+//        
+//        HBox hbox = new HBox();
+//        hbox.setMinHeight(50);
+//        hbox.setMinWidth(500);
+//        hbox.setStyle("-fx-background-color:brown");
+//        borderpane.setBottom(hbox);
+//        
+//        
+//        VBox vbox2 = new VBox();
+//        vbox2.setMinHeight(200);
+//        vbox2.setMinWidth(500);
+//        vbox2.setStyle("-fx-background-color:orange");
+//        borderpane.setLeft(vbox2);
+//        
+//        Scene scene = new Scene(borderpane);
+//        primaryStage.setScene(scene);
+//        primaryStage.show();
+        
+        
+//        AnchorPane anchorpane = new AnchorPane();
+//        anchorpane.setMinHeight(300);
+//        anchorpane.setMinWidth(500);
+//        
+//        Button button = new Button("OK");
+//        button.setLayoutX(100);
+//        button.setLayoutY(100);
+//        
+//        TextField textfield = new TextField();
+//        textfield.setLayoutX(100);
+//        textfield.setLayoutY(150);
+//        textfield.setMinHeight(50);
+//        
+//        anchorpane.getChildren().addAll(textfield,button);
+//        
+//        Scene scene = new Scene(anchorpane);
+//        primaryStage.setScene(scene);
+//        primaryStage.show();
+        
+        
+        
+//        VBox vbox = new VBox();
+//        
+//        vbox.setMinHeight(300);
+//        vbox.setMinWidth(500);
+//        
+//        vbox.setAlignment(Pos.CENTER);
+//        vbox.setSpacing(20);
+//        
+//        TextField textfield = new TextField();
+//        textfield.setMaxWidth(300);
+//        textfield.setAlignment(Pos.CENTER);
+//        
+//        Button button = new Button("Click Me");
+//        
+//        vbox.getChildren().addAll(textfield,button);
+//        
+//        Scene scene = new Scene(vbox);
+//        
+//        primaryStage.setScene(scene);
+//        
+//        primaryStage.show();
+        
+//        StackPane pane = new StackPane();
+//        
+//        pane.setMinHeight(300);
+//        pane.setMinWidth(500);
+//        
+//        Button btn = new Button();
+//        btn.setText("Click Me");
+//        pane.getChildren().add(btn);
+//        Scene scene = new Scene(pane);
+//        primaryStage.setScene(scene);
+//        primaryStage.show();
+    }
+    
+}
+

@@ -1,0 +1,127 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Nov 4, 2018, 4:15:07 AM
+    Author     : hedaetul
+*/
+
+
+#box{
+    -fx-background-color:#2E4053;
+    
+}
+#box:hover{
+    
+    -fx-background-color:#2E4053;
+    
+}
+
+
+#ambulance-button{
+     -fx-background-color: linear-gradient(to right, #a73737, #7a2828);
+}
+#ambulance-button:hover{
+    -fx-background-color: linear-gradient(to top, #996633 37%, #cc9900 95%);
+}
+#appointment-button{
+   -fx-background-color: linear-gradient(to right, #4b6cb7, #182848);
+}
+#appointment-button:hover{
+    -fx-background-color: linear-gradient(to top, #996633 37%, #cc9900 95%);
+}
+#bill-button{
+    -fx-background-color:linear-gradient(to right, #414d0b, #727a17);
+}
+#bill-button:hover{
+    -fx-background-color: linear-gradient(to top, #996633 37%, #cc9900 95%);
+}
+#department-button{
+    -fx-background-color: linear-gradient(to right, #e43a15, #e65245); 
+}
+#department-button:hover{
+    -fx-background-color:linear-gradient(to top, #996633 37%, #cc9900 95%);
+}
+#doctor-button{
+    -fx-background-color:linear-gradient(to right, #1f4037, #99f2c8);
+}
+#doctor-button:hover{
+    -fx-background-color: linear-gradient(to top, #996633 37%, #cc9900 95%);
+}
+#employee-button{
+    -fx-background-color: linear-gradient(to right, #283048, #859398);
+}
+#employee-button:hover{
+    -fx-background-color: linear-gradient(to top, #996633 37%, #cc9900 95%);
+}
+#labreport-button{
+    -fx-background-color: linear-gradient(to right, #232526, #414345);
+}
+#labreport-button:hover{
+    -fx-background-color:linear-gradient(to top, #996633 37%, #cc9900 95%);
+}
+#medicine-button{
+    -fx-background-color:linear-gradient(to right, #659999, #f4791f);
+}
+#medicine-button:hover{
+    -fx-background-color:linear-gradient(to top, #996633 37%, #cc9900 95%);
+}
+#mortury-button{
+    -fx-background-color:linear-gradient(to right, #134e5e, #71b280);
+}
+#mortury-button:hover{
+    -fx-background-color: linear-gradient(to top, #996633 37%, #cc9900 95%);
+}
+#ot-button{
+    -fx-background-color: linear-gradient(to right, #085078, #85d8ce);
+}
+#ot-button:hover{
+    -fx-background-color: linear-gradient(to top, #996633 37%, #cc9900 95%);
+}
+#parking-button{
+    -fx-background-color: linear-gradient(to right, #355c7d, #6c5b7b, #c06c84);
+}
+#parking-button:hover{
+    -fx-background-color: linear-gradient(to top, #996633 37%, #cc9900 95%);
+}
+#patient-button{
+    -fx-background-color:linear-gradient(to right, #16222a, #3a6073);
+}
+#patient-button:hover{
+    -fx-background-color:linear-gradient(to top, #996633 37%, #cc9900 95%);
+}
+#patientrecord-button{
+    -fx-background-color: linear-gradient(to right, #614385, #516395);
+}
+#patientrecord-button:hover{
+    -fx-background-color:linear-gradient(to top, #996633 37%, #cc9900 95%);
+}
+#room-button{
+    -fx-background-color: linear-gradient(to right, #eb3349, #f45c43);
+}
+#room-button:hover{
+    -fx-background-color: linear-gradient(to top, #996633 37%, #cc9900 95%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#main-pan{
+    -fx-background-image: url("../p1.jpg");
+    -fx-background-repeat: stretch;   
+    -fx-background-size: 900 506;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0); 
+}

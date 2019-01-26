@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderPan" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="696.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.DashbordButtonsController">
+   <center>
+      <GridPane hgap="2.0" prefHeight="480.0" prefWidth="529.0" vgap="2.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <JFXButton id="patientrecord-button" buttonType="RAISED" graphicTextGap="5.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#patientRecordButtonController" opacity="0.9" prefHeight="86.0" prefWidth="229.0" stylesheets="@style.css" text="Patient Record" textFill="#e8e8e8" GridPane.columnSpan="2" GridPane.rowIndex="4">
+               <font>
+                  <Font name="SansSerif Regular" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton id="appointment-button" buttonType="RAISED" graphicTextGap="5.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#appointmentButtonAction" opacity="0.9" prefHeight="488.0" prefWidth="482.0" stylesheets="@style.css" text="Apointment" textFill="#e8e8e8" GridPane.columnIndex="1">
+               <font>
+                  <Font name="SansSerif Regular" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton id="patient-button" buttonType="RAISED" graphicTextGap="5.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#patientButtonController" opacity="0.9" prefHeight="241.0" prefWidth="396.0" stylesheets="@style.css" text="Patient" textFill="#e8e8e8" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <font>
+                  <Font name="SansSerif Regular" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton id="parking-button" buttonType="RAISED" graphicTextGap="5.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#parkingButtonController" opacity="0.9" prefHeight="229.0" prefWidth="393.0" stylesheets="@style.css" text="Parking" textFill="#e8e8e8" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font name="SansSerif Regular" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton id="ot-button" buttonType="RAISED" graphicTextGap="5.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#otButtonController" opacity="0.9" prefHeight="239.0" prefWidth="427.0" stylesheets="@style.css" text="O.T." textFill="#e8e8e8" GridPane.rowIndex="3">
+               <font>
+                  <Font name="SansSerif Regular" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton id="mortury-button" buttonType="RAISED" graphicTextGap="5.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#mortuaryButtonController" opacity="0.9" prefHeight="319.0" prefWidth="370.0" stylesheets="@style.css" text="Mortury" textFill="#e8e8e8" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <font>
+                  <Font name="SansSerif Regular" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton id="medicine-button" buttonType="RAISED" graphicTextGap="5.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#medicineButtonAction" opacity="0.9" prefHeight="325.0" prefWidth="520.0" stylesheets="@style.css" text="Medicine" textFill="#f8f8f8" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font name="SansSerif Regular" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton id="labreport-button" buttonType="RAISED" graphicTextGap="5.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#labreportButtonAction" opacity="0.9" prefHeight="330.0" prefWidth="526.0" stylesheets="@style.css" text="Labreport" textFill="#e8e8e8" GridPane.rowIndex="2">
+               <font>
+                  <Font name="SansSerif Regular" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton id="employee-button" buttonType="RAISED" graphicTextGap="5.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#employeeButtonAction" opacity="0.9" prefHeight="417.0" prefWidth="451.0" stylesheets="@style.css" text="Employee" textFill="#e8e8e8" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font name="SansSerif Regular" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton id="doctor-button" buttonType="RAISED" graphicTextGap="5.0" lineSpacing="1.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#doctorButtonAction" opacity="0.85" prefHeight="419.0" prefWidth="421.0" stylesheets="@style.css" text="Doctor" textFill="#e8e8e8" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="SansSerif Regular" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton id="department-button" buttonType="RAISED" graphicTextGap="5.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#departmentButtonAction" opacity="0.9" prefHeight="418.0" prefWidth="832.0" stylesheets="@style.css" text="Department" textFill="#e8e8e8" GridPane.rowIndex="1">
+               <font>
+                  <Font name="SansSerif Regular" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton id="bill-button" buttonType="RAISED" graphicTextGap="5.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#billButtonAction" opacity="0.9" prefHeight="504.0" prefWidth="500.0" stylesheets="@style.css" text="Bill" textFill="#e8e8e8" GridPane.columnIndex="2">
+               <font>
+                  <Font name="SansSerif Regular" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton id="ambulance-button" fx:id="ambulanceButton" buttonType="RAISED" graphicTextGap="5.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#ambulanceButtonAction" opacity="0.9" prefHeight="403.0" prefWidth="556.0" stylesheets="@style.css" text="Ambulance" textFill="#e8e8e8">
+               <font>
+                  <Font name="SansSerif Regular" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton id="room-button" buttonType="RAISED" graphicTextGap="5.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#roomButtonController" opacity="0.9" prefHeight="149.0" prefWidth="395.0" stylesheets="@style.css" text="Room" textFill="#e8e8e8" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <font>
+                  <Font name="SansSerif Regular" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </BorderPane.margin>
+      </GridPane>
+   </center>
+</BorderPane>

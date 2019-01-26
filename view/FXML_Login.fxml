@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderLigin" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.FXML_LoginController">
+   <center>
+      <AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="500.0" prefWidth="749.0" style="-fx-background-color: #283747;">
+         <children>
+            <AnchorPane id="box" layoutX="375.0" layoutY="44.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="394.0" prefWidth="328.0" stylesheets="@style.css">
+               <children>
+                  <Label layoutX="133.0" layoutY="44.0" text="Sign In" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="userId" focusColor="#d8e862" labelFloat="true" layoutX="36.0" layoutY="151.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="26.0" prefWidth="250.0" promptText="User Id" style="-fx-text-fill: #F4ECF7; -fx-prompt-text-fill: #F4ECF7;" unFocusColor="#f8f6f6" />
+                  <JFXTextField fx:id="password" focusColor="#dceb88" labelFloat="true" layoutX="36.0" layoutY="212.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="26.0" prefWidth="250.0" promptText="Password" style="-fx-text-fill: #F4ECF7; -fx-prompt-text-fill: #F4ECF7;" unFocusColor="#eee9e9" />
+                  <JFXButton fx:id="loginButton" buttonType="RAISED" layoutX="39.0" layoutY="284.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#loginButtonAction" onKeyPressed="#enterButtonUse" style="-fx-background-color: #283747; -fx-border-color: yellow; -fx-background-radius: 10px; -fx-border-radius: 10px; -fx-text-fill: #FBFCFC;" text="Login">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+               </children>
+               <effect>
+                  <DropShadow color="#b29797" height="14.93" radius="8.4825" />
+               </effect>
+            </AnchorPane>
+            <ImageView fx:id="imageView" fitHeight="221.0" fitWidth="250.0" layoutX="62.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

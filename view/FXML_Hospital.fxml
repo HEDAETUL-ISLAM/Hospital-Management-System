@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="mainPan" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="683.0" prefWidth="1128.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.FXML_HospitalController">
+   
+   <top>
+      <HBox alignment="CENTER" prefHeight="56.0" prefWidth="759.0" style="-fx-background-color: #1b1d2d;" BorderPane.alignment="CENTER">
+         <children>
+            <Text fill="#cdc9c9" strokeType="OUTSIDE" strokeWidth="0.0" text="Hospital Management System">
+               <font>
+                  <Font name="SansSerif Regular" size="22.0" />
+               </font>
+            </Text>
+         </children></HBox>
+   </top>
+   <bottom>
+      <HBox prefHeight="0.0" prefWidth="0.0" BorderPane.alignment="CENTER" />
+   </bottom>
+   <left>
+      <VBox alignment="TOP_CENTER" prefHeight="482.0" prefWidth="195.0" spacing="30.0" style="-fx-background-color: #283747;" BorderPane.alignment="TOP_CENTER">
+         <children>
+            <JFXButton buttonType="RAISED" onAction="#dashboardButtonAction" prefHeight="89.0" prefWidth="89.0" style="-fx-background-color: linear-gradient(to right, #4b6cb7, #182848); -fx-background-radius: 50%; -fx-border-radius: 50%;" text="Dashboard" textFill="#e1dada">
+               <effect>
+                  <DropShadow color="#c3c1c1" radius="15.3125" spread="0.13" width="42.25" />
+               </effect>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" onAction="#userInfoButtonAction" prefHeight="89.0" prefWidth="89.0" style="-fx-background-color: linear-gradient(to right, #4b6cb7, #182848);; -fx-background-radius: 50%; -fx-border-radius: 50%;" text="User Info" textFill="#e1dada">
+               <effect>
+                  <DropShadow color="#c3c1c1" radius="15.3125" spread="0.13" width="42.25" />
+               </effect>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" onAction="#aboutHospitalButtonAction" prefHeight="89.0" prefWidth="89.0" style="-fx-background-color: linear-gradient(to right, #4b6cb7, #182848); -fx-background-radius: 50%; -fx-border-radius: 50%;" text="About" textFill="#e1dada">
+               <effect>
+                  <DropShadow color="#c3c1c1" radius="15.3125" spread="0.13" width="42.25" />
+               </effect>
+            </JFXButton>
+            <JFXButton fx:id="logutButton" buttonType="RAISED" onAction="#logutButtonAddAction" prefHeight="89.0" prefWidth="89.0" style="-fx-background-color: linear-gradient(to right, #4b6cb7, #182848); -fx-background-radius: 50%; -fx-border-radius: 50%;" text="Logout" textFill="#e1dada">
+               <effect>
+                  <DropShadow color="#c3c1c1" radius="15.3125" spread="0.13" width="42.25" />
+               </effect>
+            </JFXButton>
+            <JFXButton fx:id="manualButton" buttonType="RAISED" onAction="#manualButtonAddAction" prefHeight="89.0" prefWidth="89.0" style="-fx-background-color: linear-gradient(to right, #4b6cb7, #182848); -fx-background-radius: 50%; -fx-border-radius: 50%;" text="Menual" textFill="#e1dada">
+               <effect>
+                  <DropShadow color="#c3c1c1" radius="15.3125" spread="0.13" width="42.25" />
+               </effect>
+            </JFXButton>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets top="20.0" />
+         </padding></VBox>
+   </left>
+   <right>
+      <VBox prefHeight="482.0" prefWidth="0.0" BorderPane.alignment="CENTER" />
+   </right>
+</BorderPane>

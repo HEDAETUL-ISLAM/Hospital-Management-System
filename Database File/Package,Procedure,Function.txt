@@ -1,0 +1,146 @@
+1. create package HOSPITAL1 
+as
+
+procedure NEW_DOCTOR(pid Doctor.PERSON_ID%type,pad Doctor.PERSON_ADDRESS%type,
+pna Doctor.PERSON_NAME%type,pph Doctor.PERSON_PHONE%type,pd Doctor.DOCTOR_DEPARTMENT%type,
+pdg Doctor.DOCTOR_GENDER%type,pdq Doctor.DOCTOR_QUALIFICATION%type);
+
+function NEW_DOCTOR_FUNCTION(pd Doctor.DOCTOR_DEPARTMENT%type) return boolean;
+
+end HOSPITAL1;
+
+
+create or replace package body HOSPITAL1
+as
+procedure NEW_DOCTOR(pid Doctor.PERSON_ID%type,pad Doctor.PERSON_ADDRESS%type,
+pna Doctor.PERSON_NAME%type,pph Doctor.PERSON_PHONE%type,pd Doctor.DOCTOR_DEPARTMENT%type,
+pdg Doctor.DOCTOR_GENDER%type,pdq Doctor.DOCTOR_QUALIFICATION%type)
+
+is
+begin
+if(NEW_DOCTOR_FUNCTION(pd)=true) then
+insert into doctor values(pid,pad,pna,pph,pd,pdg,pdq);
+elsif(NEW_DOCTOR_FUNCTION(pd)=false) then
+dbms_output.put_line('Not valid!!!');
+dbms_output.put_line(pd);
+
+end if;
+end NEW_DOCTOR;
+
+function NEW_DOCTOR_FUNCTION(pd Doctor.DOCTOR_DEPARTMENT%type) return boolean
+is
+cursor c1 is select DEPARTMENT_NAME from department;
+i number(5);
+now number(5);
+begin
+for i in c1 loop
+if(i.DEPARTMENT_NAME<>pd) then
+now:=1;
+elsif(i.DEPARTMENT_NAME=pd) then
+now:=2;
+end if;
+if(now=1) then
+return FALSE;
+elsif(now=2) then
+return TRUE;
+end if;
+end loop;
+
+END NEW_DOCTOR_FUNCTION;
+
+end HOSPITAL1;
+
+
+
+
+2.create package HOSPITAL2 
+as
+
+procedure NEW_IN_PATIENT(pid IN_PATIENT.PERSON_ID%type,pad IN_PATIENT.PERSON_ADDRESS%type,
+pna IN_PATIENT.PERSON_NAME%type,pph IN_PATIENT.PERSON_PHONE%type,pdoa IN_PATIENT.DATE_OF_ADMIT%type,
+pdod IN_PATIENT.DATE_OF_DISCHARGE%type,pl IN_PATIENT.LAB_NO%type,pr IN_PATIENT.ROOM_NO%type);
+
+function NEW_IN_PATIENT_FUNCTION(pr IN_PATIENT.ROOM_NO%type) return boolean;
+
+end HOSPITAL2;
+
+
+create or replace package body HOSPITAL2
+as
+
+procedure NEW_IN_PATIENT(pid IN_PATIENT.PERSON_ID%type,pad IN_PATIENT.PERSON_ADDRESS%type,
+pna IN_PATIENT.PERSON_NAME%type,pph IN_PATIENT.PERSON_PHONE%type,pdoa IN_PATIENT.DATE_OF_ADMIT%type,
+pdod IN_PATIENT.DATE_OF_DISCHARGE%type,pl IN_PATIENT.LAB_NO%type,pr IN_PATIENT.ROOM_NO%type)
+is 
+begin
+if(NEW_IN_PATIENT_FUNCTION(pr)=true) then
+insert into IN_PATIENT values(pid,pad,pna,pph,pdoa,pdod,pl,pr);
+elsif(NEW_IN_PATIENT_FUNCTION(pr)=false) then
+dbms_output.put_line('Not valid!!!');
+end if;
+end NEW_IN_PATIENT;
+
+function NEW_IN_PATIENT_FUNCTION(pr IN_PATIENT.ROOM_NO%type) return boolean
+is
+STA ROOM.STATUS%TYPE;
+begin
+select STATUS INTO STA from ROOM WHERE ROOM_NO = pr;
+if(STA IN ('NOT VACANT','not vacant','Not Vacant')) then
+return false;
+ELSE
+return true;
+end if;
+end NEW_IN_PATIENT_FUNCTION;
+end HOSPITAL2;
+
+
+
+
+3.create package HOSPITAL3
+as
+
+procedure EMPLOYEE_SALARY_CHECK(pid EMPLOYEE.PERSON_ID%type,pad EMPLOYEE.PERSON_ADDRESS%type,
+pna EMPLOYEE.PERSON_NAME%type,pph EMPLOYEE.PERSON_PHONE%type,pdoa EMPLOYEE.EMPLOYEE_GENDER%type,
+pdod EMPLOYEE.EMPLOYEE_SALARY%type,pl EMPLOYEE.EMPLOYEE_TYPE%type);
+
+function EMPLOYEE_SALARY_CHECK_FUNCTION(pid EMPLOYEE.PERSON_ID%type, pl EMPLOYEE.EMPLOYEE_TYPE%type, pdod EMPLOYEE.EMPLOYEE_SALARY%type) return boolean;
+
+end HOSPITAL3;
+
+
+
+create or replace package body HOSPITAL3
+as
+
+procedure EMPLOYEE_SALARY_CHECK(pid EMPLOYEE.PERSON_ID%type,pad EMPLOYEE.PERSON_ADDRESS%type,
+pna EMPLOYEE.PERSON_NAME%type,pph EMPLOYEE.PERSON_PHONE%type,pdoa EMPLOYEE.EMPLOYEE_GENDER%type,
+pdod EMPLOYEE.EMPLOYEE_SALARY%type,pl EMPLOYEE.EMPLOYEE_TYPE%type)
+is 
+begin
+if(EMPLOYEE_SALARY_CHECK_FUNCTION(pid,pl,pdod)=true) then
+UPDATE EMPLOYEE SET PERSON_ADDRESS = pad, PERSON_NAME = pna, PERSON_PHONE = pph, EMPLOYEE_GENDER = pdoa, EMPLOYEE_SALARY = pdod, EMPLOYEE_TYPE = pl WHERE PERSON_ID = pid;
+elsif(EMPLOYEE_SALARY_CHECK_FUNCTION(pid,pl,pdod)=false) then
+dbms_output.put_line('Not valid!!!');
+end if;
+end EMPLOYEE_SALARY_CHECK;
+
+
+function EMPLOYEE_SALARY_CHECK_FUNCTION(pid EMPLOYEE.PERSON_ID%type, pl EMPLOYEE.EMPLOYEE_TYPE%type, pdod EMPLOYEE.EMPLOYEE_SALARY%type) return boolean
+is
+E_TYPE EMPLOYEE.EMPLOYEE_TYPE%TYPE;
+
+E_SAL EMPLOYEE.EMPLOYEE_SALARY%TYPE;
+begin
+select EMPLOYEE_TYPE, EMPLOYEE_SALARY INTO E_TYPE, E_SAL from EMPLOYEE WHERE PERSON_ID = pid;
+if(E_TYPE = 'CLERK' AND pdod > (E_SAL+(E_SAL*0.1)) ) then
+return false;
+elsif(E_TYPE = 'NURSE' AND pdod > (E_SAL+(E_SAL*0.2)) ) then
+return false;
+elsif(E_TYPE = 'HELP-DESK' AND pdod > (E_SAL+(E_SAL*0.3)) ) then
+return false;
+ELSE
+return true;
+end if;
+end EMPLOYEE_SALARY_CHECK_FUNCTION;
+
+end HOSPITAL3;

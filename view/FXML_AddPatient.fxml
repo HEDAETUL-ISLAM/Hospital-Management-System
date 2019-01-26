@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="addPatient" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" opacity="0.9" prefHeight="609.0" prefWidth="390.0" style="-fx-background-color: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.FXML_AddPatientController">
+   <left>
+      <VBox prefHeight="476.0" prefWidth="40.0" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <VBox prefHeight="476.0" prefWidth="45.0" BorderPane.alignment="CENTER" />
+   </right>
+   <top>
+      <HBox prefHeight="0.0" prefWidth="390.0" BorderPane.alignment="CENTER" />
+   </top>
+   <bottom>
+      <HBox prefHeight="2.0" prefWidth="390.0" BorderPane.alignment="CENTER" />
+   </bottom>
+   <center>
+      <Pane prefHeight="460.0" prefWidth="305.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" layoutX="96.0" layoutY="14.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Add Patient" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </Label>
+            <JFXTextField fx:id="patientIdAddField" focusColor="#c2b634" labelFloat="true" layoutX="-1.0" layoutY="88.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="26.0" prefWidth="306.0" promptText="Patient ID" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="#154993">
+               <padding>
+                  <Insets left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </JFXTextField>
+            <JFXTextField fx:id="patientNameAddField" focusColor="#c2b634" labelFloat="true" layoutY="130.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="19.0" prefWidth="306.0" promptText="Name" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="#154993">
+               <padding>
+                  <Insets left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </JFXTextField>
+            <JFXTextField fx:id="patientAddressAddField" focusColor="#c2b634" labelFloat="true" layoutY="172.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="19.0" prefWidth="306.0" promptText="Address" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="#154993">
+               <padding>
+                  <Insets left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </JFXTextField>
+            <JFXTextField fx:id="patientPhoneAddField" focusColor="#c2b634" labelFloat="true" layoutX="2.0" layoutY="214.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="26.0" prefWidth="302.0" promptText="Phone" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="#154993">
+               <padding>
+                  <Insets left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </JFXTextField>
+            <JFXTextField fx:id="patientDoctorAddField" focusColor="#c2b634" labelFloat="true" layoutX="2.0" layoutY="258.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="26.0" prefWidth="302.0" promptText="Doctor name" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="#154993">
+               <padding>
+                  <Insets left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </JFXTextField>
+            <JFXTextField fx:id="patientWeightAddField" focusColor="#c2b634" labelFloat="true" layoutX="2.0" layoutY="297.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="26.0" prefWidth="302.0" promptText="Weight" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="#154993">
+               <padding>
+                  <Insets left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </JFXTextField>
+            <JFXTextField fx:id="patientAgeAddField" focusColor="#c2b634" labelFloat="true" layoutX="2.0" layoutY="339.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="26.0" prefWidth="302.0" promptText="Age" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="#154993">
+               <padding>
+                  <Insets left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </JFXTextField>
+            <JFXTextField fx:id="patientGenderAddField" focusColor="#c2b634" labelFloat="true" layoutX="2.0" layoutY="384.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="26.0" prefWidth="302.0" promptText="Gender" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="#154993">
+               <padding>
+                  <Insets left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </JFXTextField>
+            <JFXTextField fx:id="patientAppointAddField" focusColor="#c2b634" labelFloat="true" layoutX="2.0" layoutY="423.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="26.0" prefWidth="302.0" promptText="Appointment No." style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="#154993">
+               <padding>
+                  <Insets left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </JFXTextField>
+            <JFXTextField fx:id="patientStatusAddField" focusColor="#c2b634" labelFloat="true" layoutX="2.0" layoutY="463.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="26.0" prefWidth="302.0" promptText="Status" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="#154993">
+               <padding>
+                  <Insets left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </JFXTextField>
+            <JFXButton alignment="CENTER" buttonType="RAISED" layoutX="96.0" layoutY="565.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#savePatientAction" text="Done" textFill="WHITE">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <effect>
+                  <Bloom />
+               </effect>
+            </JFXButton>
+            <JFXButton alignment="CENTER" buttonType="RAISED" layoutX="161.0" layoutY="565.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#cancelAddPatient" text="Cancel" textFill="WHITE">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXTextField fx:id="patientDiseaseAddField" focusColor="#c2b634" labelFloat="true" layoutX="1.0" layoutY="505.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="26.0" prefWidth="302.0" promptText="Disease" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="#154993">
+               <padding>
+                  <Insets left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </JFXTextField>
+         </children>
+      </Pane>
+   </center>
+   <cursor>
+      <Cursor fx:constant="HAND" />
+   </cursor>
+</BorderPane>

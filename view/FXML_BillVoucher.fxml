@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="746.0" prefWidth="852.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.FXML_BillVoucherController">
+   <children>
+      <AnchorPane layoutY="-6.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="54.0" prefWidth="852.0" style="-fx-background-color: #5D6D7E;">
+         <children>
+            <Label layoutX="382.0" layoutY="15.0" text="Voucher" textFill="#d1f2eb">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label layoutX="111.0" layoutY="111.0" text="From">
+         <font>
+            <Font name="SansSerif Bold" size="16.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="-4.0" layoutY="30.0" prefHeight="634.0" prefWidth="36.0" />
+      <Label layoutX="540.0" layoutY="111.0" text="To">
+         <font>
+            <Font name="SansSerif Bold" size="16.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="806.0" layoutY="-3.0" prefHeight="667.0" prefWidth="46.0" />
+      <Label fx:id="hospitalIDField" layoutX="111.0" layoutY="147.0" prefHeight="29.0" prefWidth="258.0">
+         <font>
+            <Font name="SansSerif Regular" size="15.0" />
+         </font></Label>
+      <Label fx:id="hospitalNameField" layoutX="111.0" layoutY="176.0" prefHeight="29.0" prefWidth="258.0">
+         <font>
+            <Font name="SansSerif Regular" size="15.0" />
+         </font></Label>
+      <Label fx:id="hospitalAddressField" layoutX="111.0" layoutY="205.0" prefHeight="29.0" prefWidth="258.0">
+         <font>
+            <Font name="SansSerif Regular" size="15.0" />
+         </font></Label>
+      <Label fx:id="patientIdField" layoutX="540.0" layoutY="183.0" prefHeight="29.0" prefWidth="258.0">
+         <font>
+            <Font name="SansSerif Regular" size="15.0" />
+         </font></Label>
+      <Label fx:id="billNoAddFiels" layoutX="540.0" layoutY="154.0" prefHeight="29.0" prefWidth="258.0">
+         <font>
+            <Font name="SansSerif Regular" size="15.0" />
+         </font></Label>
+      <JFXButton fx:id="printButton" layoutX="351.0" layoutY="678.0" onAction="#printButtonAction" style="-fx-background-color: #1F618D;" text="Print" textFill="WHITE" />
+      <JFXButton layoutX="436.0" layoutY="678.0" onAction="#cancelButtonAction" style="-fx-background-color: #EB984E;" text="Cancel" textFill="WHITE" />
+      <Label layoutX="251.0" layoutY="280.0" text="Doctor Charge" textFill="#1a5276">
+         <font>
+            <Font name="Serif Regular" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="251.0" layoutY="315.0" text="Medicine Charge" textFill="#1a5276">
+         <font>
+            <Font name="Serif Regular" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="251.0" layoutY="347.0" text="Room Charge" textFill="#1a5276">
+         <font>
+            <Font name="Serif Regular" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="251.0" layoutY="382.0" text="OT Charge" textFill="#1a5276">
+         <font>
+            <Font name="Serif Regular" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="251.0" layoutY="421.0" text="Lab Charge" textFill="#1a5276">
+         <font>
+            <Font name="Serif Regular" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="251.0" layoutY="460.0" text="No Of days" textFill="#1a5276">
+         <font>
+            <Font name="Serif Regular" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="251.0" layoutY="495.0" text="Health Card" textFill="#1a5276">
+         <font>
+            <Font name="Serif Regular" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="251.0" layoutY="529.0" text="Advance" textFill="#1a5276">
+         <font>
+            <Font name="Serif Regular" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="251.0" layoutY="568.0" text="Total Bill" textFill="#1a5276">
+         <font>
+            <Font name="Serif Regular" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="251.0" layoutY="608.0" text="Due" textFill="#1a5276">
+         <font>
+            <Font name="Serif Regular" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="doctorCharge" layoutX="499.0" layoutY="276.0" prefHeight="29.0" prefWidth="210.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="medicineCharge" layoutX="499.0" layoutY="311.0" prefHeight="29.0" prefWidth="210.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="roomCharge" layoutX="499.0" layoutY="343.0" prefHeight="29.0" prefWidth="210.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="otCharge" layoutX="499.0" layoutY="378.0" prefHeight="29.0" prefWidth="210.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="labCharge" layoutX="499.0" layoutY="417.0" prefHeight="29.0" prefWidth="210.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="noOfDays" layoutX="499.0" layoutY="456.0" prefHeight="29.0" prefWidth="210.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="healthCard" layoutX="499.0" layoutY="491.0" prefHeight="29.0" prefWidth="210.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="advancePay" layoutX="499.0" layoutY="525.0" prefHeight="29.0" prefWidth="210.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="totalBill" layoutX="499.0" layoutY="564.0" prefHeight="29.0" prefWidth="210.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="due" layoutX="499.0" layoutY="604.0" prefHeight="29.0" prefWidth="210.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

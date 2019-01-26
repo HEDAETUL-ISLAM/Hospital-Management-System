@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="addBill" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" opacity="0.9" prefHeight="609.0" prefWidth="390.0" style="-fx-background-color: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.FXML_AddBillController">
+   <left>
+      <VBox prefHeight="476.0" prefWidth="40.0" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <VBox prefHeight="476.0" prefWidth="45.0" BorderPane.alignment="CENTER" />
+   </right>
+   <top>
+      <HBox prefHeight="0.0" prefWidth="390.0" BorderPane.alignment="CENTER" />
+   </top>
+   <bottom>
+      <HBox prefHeight="2.0" prefWidth="390.0" BorderPane.alignment="CENTER" />
+   </bottom>
+   <center>
+      <Pane prefHeight="460.0" prefWidth="305.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" layoutX="114.0" layoutY="14.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Add Bill" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </Label>
+            <JFXTextField fx:id="billNoAddField" focusColor="#c2b634" labelFloat="true" layoutY="88.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="26.0" prefWidth="306.0" promptText="Bill No" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="#154993">
+               <padding>
+                  <Insets left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </JFXTextField>
+            <JFXTextField fx:id="patientIdAddField" focusColor="#c2b634" labelFloat="true" layoutY="130.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="19.0" prefWidth="306.0" promptText="Patient Id" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="#154993">
+               <padding>
+                  <Insets left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </JFXTextField>
+            <JFXTextField fx:id="drChargeAddfield" focusColor="#c2b634" labelFloat="true" layoutY="172.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="19.0" prefWidth="306.0" promptText="Dr. Charge" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="#154993">
+               <padding>
+                  <Insets left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </JFXTextField>
+            <JFXTextField fx:id="mediChargeAddField" focusColor="#c2b634" labelFloat="true" layoutX="2.0" layoutY="214.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="26.0" prefWidth="302.0" promptText="Medical Charge" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="#154993">
+               <padding>
+                  <Insets left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </JFXTextField>
+            <JFXTextField fx:id="roomChargeAddField" focusColor="#c2b634" labelFloat="true" layoutX="2.0" layoutY="258.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="26.0" prefWidth="302.0" promptText="Room Charge" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="#154993">
+               <padding>
+                  <Insets left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </JFXTextField>
+            <JFXTextField fx:id="otChargeAddfield" focusColor="#c2b634" labelFloat="true" layoutX="2.0" layoutY="297.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="26.0" prefWidth="302.0" promptText="O.T. Charge" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="#154993">
+               <padding>
+                  <Insets left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </JFXTextField>
+            <JFXTextField fx:id="noOfDaysAddField" focusColor="#c2b634" labelFloat="true" layoutX="2.0" layoutY="339.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="26.0" prefWidth="302.0" promptText="No. Of Days" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="#154993">
+               <padding>
+                  <Insets left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </JFXTextField>
+            <JFXTextField fx:id="healthCardAddField" focusColor="#c2b634" labelFloat="true" layoutX="2.0" layoutY="384.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="26.0" prefWidth="302.0" promptText="Health Card" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="#154993">
+               <padding>
+                  <Insets left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </JFXTextField>
+            <JFXTextField fx:id="labChargeAddField" focusColor="#c2b634" labelFloat="true" layoutX="2.0" layoutY="423.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="26.0" prefWidth="302.0" promptText="Lab. Charge" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="#154993">
+               <padding>
+                  <Insets left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </JFXTextField>
+            <JFXTextField fx:id="advancePayAddField" focusColor="#c2b634" labelFloat="true" layoutX="2.0" layoutY="463.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="26.0" prefWidth="302.0" promptText="Advance Pay" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="#154993">
+               <padding>
+                  <Insets left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </JFXTextField>
+            <JFXButton alignment="CENTER" buttonType="RAISED" layoutX="91.0" layoutY="525.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#saveBillAction" text="Done" textFill="WHITE">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <effect>
+                  <Bloom />
+               </effect>
+            </JFXButton>
+            <JFXButton alignment="CENTER" buttonType="RAISED" layoutX="163.0" layoutY="525.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#cancelAddBill" text="Cancel" textFill="WHITE">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
+   </center>
+   <cursor>
+      <Cursor fx:constant="HAND" />
+   </cursor>
+</BorderPane>

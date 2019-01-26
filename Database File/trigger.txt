@@ -1,0 +1,65 @@
+1.create or replace trigger room_log
+after update of status on room
+for each row
+declare
+pi varchar2(255);
+update_status varchar2(255);
+begin
+update_status:=:new.status;
+
+if(update_status IN ('Vacant','vacant','VACANT')) then 
+
+select person_id into pi from in_patient where room_no =:old.room_no;
+
+insert into RoomLog values(:old.room_no,pi,:old.room_type,sysdate);
+
+end if;
+end;
+
+
+2.create or replace trigger phone_warning
+before update or insert of PERSON_PHONE on admin
+for each row
+begin
+if(length(:NEW.PERSON_PHONE)>11) then
+raise_application_error('-20343', 'The phone number is not valid');
+end if;
+end;
+
+
+3.create or replace trigger pr1
+after delete on bill
+for each row
+
+declare
+doa date;
+dod date;
+di varchar2(255);
+dn varchar2(255);
+prblm varchar2(255);
+pn varchar2(255);
+pi varchar2(255);
+
+begin
+
+select date_of_admit,date_of_discharge into doa,dod from in_patient where person_id = :old.patient_id;
+select patient_doctor,patient_disease,person_name into di,prblm,pn from patient where person_id= :old.patient_id;
+select person_name into dn from doctor where person_id= di;
+
+insert into patient_record values(:old.patient_id,doa,dod,di,dn,pn,prblm);
+
+delete from in_patient where person_id= :old.patient_id;
+
+delete from patient where person_id= :old.patient_id;
+
+end;
+
+
+4.create or replace trigger EMPLOYEE_SALARY_LOG_TRG
+after update of EMPLOYEE_SALARY on EMPLOYEE
+for each row
+begin
+
+insert into EMPLOYEE_SALARY_LOG values(:old.PERSON_ID, :old.PERSON_NAME ,:old.EMPLOYEE_SALARY ,:new.EMPLOYEE_SALARY);
+
+end;
